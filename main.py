@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 from datetime import *
+from colorama import *
+init(autoreset=True)
 import random
 from facto import fact 
 from findDup import findDup
@@ -13,8 +15,10 @@ try :
 				genDate(group)
 				if d_list == [] :
 					genDate(group)
-				print(f'Change Percentage in group of (group) : ' ,format(findPercent(group),'.1f'),'%')
-				print(f'The Dates that repeated are : {d_list} ')
+				p = Fore.RED +  format(findPercent(group),'.1f')
+				print(f'Percentage : {p}%')
+				d = Fore.BLUE + str(d_list)
+				print(f'The Dates that repeated are : {d} ')
 			
 			except ValueError:
 				
